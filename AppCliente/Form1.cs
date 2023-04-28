@@ -12,7 +12,7 @@ namespace AppCliente
 {
     public partial class Form1 : Form
     {
-        public string codigo;
+        public string codigo="0";
         public string apellidos;
         public string nombres;
         public string dni;
@@ -54,6 +54,12 @@ namespace AppCliente
                     objCliente.Guardar();
                     MessageBox.Show("Guardado", "Info");
                 }
+                else
+                {
+                    objCliente.IdCliente = int.Parse(txtId.Text);
+                    objCliente.Actualizar();
+                    MessageBox.Show("Actualizado", "Info");
+                }
                 
             }
             catch (Exception ex)
@@ -75,6 +81,11 @@ namespace AppCliente
                 txtCelular.Text = celular;
 
             }
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
