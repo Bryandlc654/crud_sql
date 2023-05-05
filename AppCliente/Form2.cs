@@ -60,6 +60,12 @@ namespace AppCliente
             {
                 Cliente objCliente = new Cliente();
                 int codigo =int.Parse( dgvDatos.CurrentRow.Cells[0].Value.ToString());
+
+                objCliente.IdCliente = codigo;
+                objCliente.Eliminar();
+
+                MessageBox.Show("Eliminado", "info");
+                Form2_Load(sender, e);
             }
         }
     }
