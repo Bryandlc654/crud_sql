@@ -47,8 +47,9 @@ namespace AppCliente
             ofrm.dni = dgvDatos.CurrentRow.Cells[3].Value.ToString();
             ofrm.direccion = dgvDatos.CurrentRow.Cells[4].Value.ToString();
             ofrm.celular = dgvDatos.CurrentRow.Cells[5].Value.ToString();
+            ofrm.ShowDialog();
+            Form2_Load(sender, e);
 
-        ofrm.ShowDialog();
         }
     }
 }

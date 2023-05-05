@@ -91,5 +91,27 @@ namespace AppCliente
             }
         }
 
+
+        public void Eliminar()
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                cnx.Open();
+                comando.Connection = cnx;
+                comando.CommandText = "Sp_Eliminar_Cliente";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@IdCliente", IdCliente);
+             
+                comando.ExecuteNonQuery(); //este codigo le ordena a ejecutarse
+                cnx.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
