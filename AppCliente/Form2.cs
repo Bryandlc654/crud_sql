@@ -51,5 +51,16 @@ namespace AppCliente
             Form2_Load(sender, e);
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Deseas eliminar el registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado==DialogResult.Yes)
+            {
+                Cliente objCliente = new Cliente();
+                int codigo =int.Parse( dgvDatos.CurrentRow.Cells[0].Value.ToString());
+            }
+        }
     }
 }
